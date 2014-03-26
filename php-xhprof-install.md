@@ -83,3 +83,22 @@ Create a symbolic link in your app code so that xhprof is accessible (alternativ
     ln -s /path/to/xhprof/repo xhprof
 
 Now hit the app to generate an xhprof report and follow the link.
+
+
+Explanation of report
+---------------------
+http://blog.cnizz.com/2012/05/05/enhanced-php-performance-profiling-with-xhprof/
+
+- Calls: How many times was this function called
+
+- Call%: Not sure on this one…
+
+- Inclusive Wall Time: Wall time is the human perception of the passage of time. So when the report says 17,331 microseconds was spent on an operation – that means this operation (and all of its child operations) took 17.3 milliseconds or 0.0173 seconds. Inclusive means it includes its child operations.
+
+- Exclusive Wall Time: Same as inclusive wall time except exclusive means the report is not counting the sum of the operations child processes, no children.
+
+- Inclusive/Exclusive Memory Usage: How much memory was consumed by this process - similar to memory_get_usage(). Since this is measured in bytes basically each million is worth roughly 1 Megabyte. For instance 2,433,256 means 2.32 MB.
+
+- Inclusive/Exclusive Peak Memory Usage: How much memory was consumed by this process at its peak - similar to memory_get_peak_usage().
+
+- Inclusive/Exclusive CPU Microseconds: I am not sure on this one, I think this literally means CPU time. Would love someone to school me up on that one.
